@@ -1,0 +1,78 @@
+### Get admin token for our realm
+POST http://localhost:8080/realms/digital-dev/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json
+
+grant_type = password &
+username = admin &
+password = 12345678 &
+client_id = admin-cli
+
+> {%
+    client.global.set("access_token", response.body.access_token);
+%}
+
+### View Realm info
+GET http://localhost:8080/admin/realms/digital-dev
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+### View Realm users
+GET http://localhost:8080/admin/realms/digital-dev/users
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+### View Realm groups
+GET http://localhost:8080/admin/realms/digital-dev/groups
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+
+### Create user using the access_token from above
+POST http://localhost:8080/admin/realms/digital-dev/users
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "username": "moniquelive",
+  "firstName": "Monique",
+  "lastName": "Oliveira",
+  "email": "monique.oliveira@akadseguros.com.br",
+  "emailVerified": true,
+  "enabled": true,
+  "credentials": [
+    {
+      "type": "password",
+      "value": "12345678",
+      "temporary": false
+    }
+  ]
+}
+
+### Create another user with other attributes
+POST http://localhost:8080/admin/realms/digital-dev/users
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+{
+  "username": "lccro",
+  "firstName": "Cyberama",
+  "lastName": "Oliveira",
+  "email": "lccro@msn.com",
+  "emailVerified": true,
+  "enabled": true,
+  "groups": [
+    "Wiz Admins"
+  ],
+  "credentials": [
+    {
+      "type": "password",
+      "value": "12345678",
+      "temporary": false
+    }
+  ]
+}
+
+###

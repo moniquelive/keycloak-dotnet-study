@@ -1,0 +1,29 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5125",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "KEYCLOAK_CLIENT_ID": "authentication-api",
+        "KEYCLOAK_CLIENT_SECRET": "",
+        "KEYCLOAK_REALM_URL": "http://localhost:8080/realms/digital-dev/"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7127;http://localhost:5125",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "KEYCLOAK_CLIENT_ID": "authentication-api",
+        "KEYCLOAK_CLIENT_SECRET": "",
+        "KEYCLOAK_REALM_URL": "http://localhost:8080/realms/digital-dev/"
+      }
+    }
+  }
+}

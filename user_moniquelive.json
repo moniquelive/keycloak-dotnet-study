@@ -1,0 +1,23 @@
+{
+  "username": "moniquelive",
+  "firstName": "Monique",
+  "lastName": "Oliveira",
+  "email": "someemail@akadseguros.com.br",
+  "emailVerified": true,
+  "createdTimestamp": 1751313950292,
+  "enabled": true,
+  "totp": false,
+  "disableableCredentialTypes": [],
+  "requiredActions": [],
+  "notBefore": 0,
+  "access": {
+    "manage": true
+  },
+  "credentials": [
+    {
+      "type": "password",
+      "value": "12345678",
+      "temporary": false
+    }
+  ]
+}

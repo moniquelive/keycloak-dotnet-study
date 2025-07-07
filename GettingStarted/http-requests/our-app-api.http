@@ -1,0 +1,23 @@
+### Get JWT token
+POST http://localhost:5125/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "moniquelive",
+  "password": "12345678"
+}
+
+> {%
+    client.global.set("access_token", response.body.access_token);
+%}
+
+### Call Willis API
+GET http://localhost:5125/partner/willis
+Authorization: Bearer {{access_token}}
+
+### Call Wiz API
+GET http://localhost:5125/partner/wiz
+Authorization: Bearer {{access_token}}
+
+###

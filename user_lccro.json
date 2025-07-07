@@ -1,0 +1,18 @@
+{
+  "username": "lccro",
+  "firstName": "Cyberama",
+  "lastName": "Oliveira",
+  "email": "some@email.com",
+  "emailVerified": true,
+  "enabled": true,
+  "access": {
+    "manage": true
+  },
+  "credentials": [
+    {
+      "type": "password",
+      "value": "12345678",
+      "temporary": false
+    }
+  ]
+}
